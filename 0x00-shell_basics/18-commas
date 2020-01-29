@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -m -a -p echo
+ls -m -a -p -I *_
