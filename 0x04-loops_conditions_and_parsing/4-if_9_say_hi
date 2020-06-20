@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 # displays Holberton School 10 times
-str="Holberton School"
 count=0
 while [ $count -lt 10 ]
 do
-    echo $str
+    echo "Holberton School"
     let count+=1
     if [ $count -eq 9 ]
     then
-        echo Hi
+        echo "Hi"
     fi
 done

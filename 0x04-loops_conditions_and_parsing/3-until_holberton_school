@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # displays Holberton School 10 times
-str="Holberton School"
 count=10
 until [ $count -eq 0 ]
 do
-    echo $str
+    echo "Holberton School"
     let count-=1
 done
