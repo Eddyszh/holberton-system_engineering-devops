@@ -1,0 +1,2 @@
+#!/bin/bash
+tr --truncate-set1 ":" " " | cut -d " " -f1 | grep --count $PATH
