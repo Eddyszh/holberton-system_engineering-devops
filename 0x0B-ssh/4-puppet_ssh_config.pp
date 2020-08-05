@@ -6,7 +6,7 @@ file_line { 'IdentityFile':
   match   => '^IdentityFile'
 }
 
-file_line { 'IdentityFile':
+file_line { 'PasswordAuthentication':
   ensure  => present,
   path    => '/etc/ssh/ssh_config',
   line    => 'PasswordAuthentication no',
