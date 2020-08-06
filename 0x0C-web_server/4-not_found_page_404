@@ -2,9 +2,6 @@
 # custom 404 page
 sudo apt-get -y update
 sudo apt-get -y install nginx
-ERR="404.html"
-sudo echo "Ceci n'est pas une page" > $ERR
-sudo mv $ERR /usr/share/nginx/html/
-sudo sed -i "s/#error_page/error_page/" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+sudo sed -i "35 a\ \terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-enabled/default
 sudo service nginx restart
-sudo service nginx reload
