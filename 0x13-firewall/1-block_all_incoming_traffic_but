@@ -1,8 +1,9 @@
-#!/usr/bin/env bash
-sudo ufw status
 sudo ufw default deny incoming
 sudo ufw default aloow outgoing
 sudo ufw allow OpenSSH
 sudo ufw allow in "Nginx HTTP"
 sudo ufw allow in "Nginx HTTPS"
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
 sudo ufw enable
