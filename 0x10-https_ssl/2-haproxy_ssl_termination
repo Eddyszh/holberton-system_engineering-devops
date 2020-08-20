@@ -34,15 +34,18 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend www-https
-   bind 0.0.0.0:443 ssl crt-list /etc/haproxy/certs/list.txt
+frontend firstbalance
+   bind *:80
+   bind *:443 ssl crt-list /etc/haproxy/certs/list.txt
    reqadd X-Forwarded-Proto:\ https
    acl letsencrypt-acl path_beg /.well-known/acme-challenge/
    use_backend letsencrypt-backend if letsencrypt-acl
+   default_backend webservers
 
-backend b_webfarm
+backend webservers
     mode http
     option forwardfor
     balance roundrobin
     server web-01 web-01.gozt.tech:80
     server web-02 web-02.gozt.tech:80
+    option httpchk
