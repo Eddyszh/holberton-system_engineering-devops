@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+sudo ufw status
+sudo ufw default deny incoming
+sudo ufw allow OpenSSH
+sudo ufw allow from any to any port 80 proto tcp
+sudo ufw allow from any to any port 443 proto tcp
+sudo ufw enable
