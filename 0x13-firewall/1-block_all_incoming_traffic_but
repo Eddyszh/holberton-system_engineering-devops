@@ -2,6 +2,6 @@
 sudo ufw status
 sudo ufw default deny incoming
 sudo ufw allow OpenSSH
-sudo ufw allow from any to any port 80 proto tcp
-sudo ufw allow from any to any port 443 proto tcp
+sudo ufw allow in "Nginx HTTP"
+sudo ufw allow in "Nginx HTTPS"
 sudo ufw enable
