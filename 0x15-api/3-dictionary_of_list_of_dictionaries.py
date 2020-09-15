@@ -9,7 +9,7 @@ from sys import argv
 if __name__ == "__main__":
     """Records all tasks from all employees"""
     users = requests.get('https://jsonplaceholder.typicode.com/users',
-                        verify=False).json()
+                         verify=False).json()
     todo = requests.get('https://jsonplaceholder.typicode.com/todos',
                         verify=False).json()
     udict = {}
